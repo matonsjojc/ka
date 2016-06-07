@@ -1,0 +1,4 @@
+- Če ima več mask, naj vpiše najljubšo + komentar
+
+-models:
+  Pacient povezan z User object
