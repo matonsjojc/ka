@@ -1,4 +1,5 @@
 - Če ima več mask, naj vpiše najljubšo + komentar
 
--models:
-pri aparatu: vse nastavitve; vrsta terapije svoj model?
+- models:
+pri aparatu: vse nastavitve;
+vrsta terapije/nastavitve: svoj model, povezan s pacientom
