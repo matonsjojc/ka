@@ -2,19 +2,16 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Pacient(models.Model):
-    #user = models.OneToOneField(User)
-    ime = models.CharField(max_length=120, null=True)
-    aparat = models.CharField(max_length=120, null=True)
+    user = models.OneToOneField(User, null=True)
+    ime = models.CharField(max_length=120, null=True) #zamenjaj z userjem
     ponudnik = models.ForeignKey('Ponudnik', null=True)
     #dodaj še id, odgovore
     def __str__(self):
         return self.ime#self.user.username
 
-"""
 class Aparat(models.Model):
     proizvajalec = models.CharField(max_length=120) #zamenjaj s choices...
-    vrsta_terapije = models.CharField(max_length=120)
-    ponudnik = models.ForeignKey('Ponudnik', null=True) #verjetno bolje on delete cascade...
+    vrsta_terapije = models.CharField(max_length=120, null=True)
     pacient = models.ForeignKey('Pacient', null=True)
     #dodaj še: model, nastavitev,
     def __str__(self):
@@ -27,6 +24,7 @@ class Maska(models.Model):
 
     def __str__(self):
         return self.tip
+"""
 
 class Ponudnik(models.Model):
     ime = models.CharField(max_length=120)
