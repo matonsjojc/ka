@@ -1,8 +1,22 @@
 from django.contrib import admin
 from ka.models import Pacient, Ponudnik, Aparat, Maska
 
+class AparatInline(admin.StackedInline):
+    model = Aparat
+    extra = 0
+
+class MaskaInline(admin.StackedInline):
+    model = Maska
+    extra = 0
+
+
 class PacientAdmin(admin.ModelAdmin):
     list_display = ('user', 'id', 'ime', 'ponudnik')
+    fields = ['user', 'ponudnik', 'ime']
+    inlines = [
+        AparatInline,
+        MaskaInline,
+    ]
 
 class PonudnikAdmin(admin.ModelAdmin):
     pass

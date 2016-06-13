@@ -3,3 +3,4 @@
 - models:
 pri aparatu: vse nastavitve;
 vrsta terapije/nastavitve: svoj model, povezan s pacientom
+preveri on_delete pri relacijah
