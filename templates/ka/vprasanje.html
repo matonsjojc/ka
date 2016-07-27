@@ -1,0 +1,21 @@
+{% for vpr in vprasanje %}
+    {# Each "contact" is a Contact model object. #}
+    {{ vpr.tekst|upper }}<br />
+    ...
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if vprasanje.has_previous %}
+            <a href="?page={{ vprasanje.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ vprasanje.number }} of {{ vprasanje.paginator.num_pages }}.
+        </span>
+
+        {% if vprasanje.has_next %}
+            <a href="?page={{ vprasanje.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>

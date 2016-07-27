@@ -19,8 +19,7 @@ from ka import views
 
 
 urlpatterns = [
-    url(r'^$', views.prva_stran, name="prva_stran"),
+    url(r'^$', views.user_login, name="login"),
     url(r'^ka/', include('ka.urls')),
     url(r'^admin/', admin.site.urls),
-
 ]

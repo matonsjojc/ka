@@ -1,9 +1,13 @@
 {% extends 'ka/base.html' %}
 {% load staticfiles %}
+
 {% block title_block %}
 Kontrole aparata - prva stran
 {% endblock %}
 
 {% block body_block %}
-<strong>Bu</strong>
+<strong>Tuki dej uvod in začni z vprašanji.</strong>
+<br />
+<a href="{% url 'vprasanje' %}">Vprašanja.</a>
+
 {% endblock %}

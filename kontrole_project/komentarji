@@ -3,4 +3,15 @@
 - models:
 pri aparatu: vse nastavitve;
 vrsta terapije/nastavitve: svoj model, povezan s pacientom
-preveri on_delete pri relacijah
+preveri on_delete pri relacijah - ob ukinitvi pacienta se izbrišejo maska, aparat, nastavitve.
+Ob ukinitvi ponudnika se pacient ne izbriše.
+
+-modela Vprasanje/Odgovor --> sledi datumom sprememb, če se bo vprašalnik spreminjal.
+(verjetno najbolje, da se ju nikoli ne izbriše, le dodajamo nove - če kateri ne bo več v uporabi,
+ga le skriješ-deaktiviraš); med atributi za V naj bo active=y/n.
+"Statična modela" - odgovor, ki ga bo izbral pacient, se bo beležil v modelu Anketa.
+
+-model Anketa: nova instanca ob vsakem izpolnjevanju (drug pacient/drug datum).
+atributi: Pacient(=FK), seznam aktivnih vprašanj in odgovorov. seznam odgovorov, ki jih je kliknil pacient.
+
+-password hasher, validation
